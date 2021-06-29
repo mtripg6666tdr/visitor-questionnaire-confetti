@@ -1,5 +1,5 @@
 {
-  "name": "visitor-questionnaire-confetti",
+  "name": "visitor-survey-confetti",
   "version": "1.0.0",
   "description": "The most light confetti JavaScript library with strong type definitions born from the most famous phishing site, \"visitor questionnaire\".",
   "main": "dist/index.js",
