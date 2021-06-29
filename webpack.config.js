@@ -4,7 +4,7 @@ module.exports = {
   mode: "production",
   entry: path.join(__dirname, "./src/entry.ts"),
   output: {
-    filename: "visitor-questionnaire-confetti.js",
+    filename: "visitor-survey-confetti.js",
     path: path.join(__dirname, "./lib"),
     library: "Confetti",
     libraryTarget: "umd"
