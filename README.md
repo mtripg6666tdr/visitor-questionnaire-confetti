@@ -1,5 +1,6 @@
 # Visitor-Questionnaire-Confetti
-The most light confetti JavaScript library with strong type definitions born from the most famous phishing site, "visitor questionnaire".
+The most light confetti JavaScript library with strong type definitions born from the most famous phishing site, "visitor questionnaire".  
+[Example page](https://mtripg6666tdr.github.io/visitor-questionnaire-confetti/sample.html)
 
 ## What is this?
 When we net-surf, we can sometimes see the phishing page named: visitor questionnaire.  
