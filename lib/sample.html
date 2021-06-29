@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    canvas {
+      display: block;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="1920" height="950"></canvas>
+  <script src="visitor-questionnaire-confetti.js"></script>
+  <script>
+    window.addEventListener("load", ()=>{
+      const cf = new Confetti(document.getElementById("canvas"));
+      cf.InitializeConfetti();
+    });
+  </script>
+</body>
+</html>

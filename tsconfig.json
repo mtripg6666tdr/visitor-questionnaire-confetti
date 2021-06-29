@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "UMD",
+    "target": "ES3",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "./**/*.ts"
+  ]
+}
