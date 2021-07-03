@@ -21,11 +21,15 @@
   </style>
 </head>
 <body>
+  <h1>Visitor Survey Confetti DEMO</h1>
+  <button onclick="cf.RestartConfetti();">Start</button>
+  <button onclick="cf.DeactivateConfetti();">Stop</button>
   <canvas id="canvas" width="1920" height="950"></canvas>
   <script src="visitor-survey-confetti.js"></script>
   <script>
+    var cf;
     window.addEventListener("load", ()=>{
-      const cf = new Confetti(document.getElementById("canvas"));
+      cf = new Confetti(document.getElementById("canvas"));
       cf.InitializeConfetti();
     });
   </script>
