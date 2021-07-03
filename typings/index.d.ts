@@ -9,11 +9,11 @@ export declare class Confetti {
     private animationHandler;
     private particles;
     private angle;
-    private tiltAngle;
     private confettiActive;
     private animationComplete;
     private particleColors;
     constructor(canvas: HTMLCanvasElement, color?: ParticleColors);
+    GetIsActive(): boolean;
     InitializeConfetti(): void;
     private Draw;
     static RandomFromTo(t: number, i: number): number;

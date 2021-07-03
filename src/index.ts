@@ -9,7 +9,6 @@ export class Confetti {
   private animationHandler:any;
   private particles = [] as ConfettiParticle[];
   private angle = 0;
-  private tiltAngle = 0;
   private confettiActive = true;
   private animationComplete = true;
   private particleColors = null as ParticleColors;
@@ -23,6 +22,10 @@ export class Confetti {
     window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(t:any) {
         return window.setTimeout(t, 1e3 / 60);
     }
+  }
+
+  GetIsActive(){
+    return this.confettiActive;
   }
 
   InitializeConfetti() {
@@ -51,7 +54,6 @@ export class Confetti {
     var t = null as ConfettiParticle;
     var i = 0;
     this.angle += .01;
-    this.tiltAngle += .1;
     for (var n = 0; n < this.mp; n++) {
       if (t = this.particles[n], this.animationComplete) return;
       if(!this.confettiActive && t.y < -15){
@@ -110,24 +112,24 @@ export class Confetti {
     this.canvas1.height = this.H;
   }
   private ClearTimers() {
-      clearTimeout(this.reactivationTimerHandler),
-      clearTimeout(this.animationHandler)
+      clearTimeout(this.reactivationTimerHandler);
+      clearTimeout(this.animationHandler);
   }
   DeactivateConfetti() {
-      this.confettiActive = false,
-      this.ClearTimers()
+      this.confettiActive = false;
+      this.ClearTimers();
   }
   private StopConfetti() {
-      this.animationComplete = !0,
+      this.animationComplete = true;
       null != this.ctx && this.ctx.clearRect(0, 0, this.W, this.H)
   }
   RestartConfetti() {
-    this.ClearTimers(),
-    this.StopConfetti(),
-    this.reactivationTimerHandler = setTimeout(function() {
-      this.confettiActive = !0,
-      this.animationComplete = !1,
-      this.InitializeConfetti()
+    this.ClearTimers();
+    this.StopConfetti();
+    this.reactivationTimerHandler = setTimeout(()=>{
+      this.confettiActive = true;
+      this.animationComplete = false;
+      this.InitializeConfetti();
     }, 100);
   }
 }
